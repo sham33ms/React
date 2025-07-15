@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App2 from './App2'
+// import App2 from '../Props/App2'
 import './App.css'
 import Iif from './Iif'
 import Else from './Else'
@@ -28,11 +28,12 @@ function App() {
       var root=ReactDOM.createRoot(document.getElementById("rot"));
       root.render(fuun);}
       var arr =[1,2,3,4,5];
-      var result=arr.map(function(item,index){
-        
-        return <li key={index} >{item*2} </li>;
-      })
-    
+      var result=arr.map((item,index)=> <li key={index} >{item*2} </li>)
+        function funct(){
+        var subs = <div>Subscribed</div>;
+        var root=ReactDOM.createRoot(document.getElementById("root"));
+        root.render(subs);
+        }
       return (
     <div>
       {element}
@@ -40,9 +41,11 @@ function App() {
       {check}
       {res}
       {out}
+      
       <ol style={{color:"black"}}>{result}</ol>
-      <App2 />
+      {/* <App2 /> */}
       <button onMouseEnter={fun} onMouseOut={func}>click</button>
+      <button onClick={funct} >Subscribe!</button>
     </div>
   )
 
