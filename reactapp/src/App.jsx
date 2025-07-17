@@ -100,16 +100,16 @@ import React, { useState } from "react";
 
 function MyForm() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    age: "",
+    // name: "",
+    // email: "",
+    // age: "",
 });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { nam, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [nam]: value,
     }));
   };
 
@@ -123,7 +123,7 @@ function MyForm() {
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input name="name" value={formData.name} onChange={handleChange} />
+        <input nam="name" value={formData.name} onChange={handleChange} />
       </label>
       <br />
 
@@ -144,9 +144,10 @@ function MyForm() {
       </label>
       <br />
 
-      <button type="submit">Submit</button>
+      <input type="submit"/>
 
       <pre>{JSON.stringify(formData, null, 2)}</pre>
+      {/* <p>{formData} </p> */}
     </form>
   );
 }
